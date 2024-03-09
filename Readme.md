@@ -56,6 +56,9 @@
 | ✅ [tailwindcss]    | Se utiliza tailwind como elemento recomendado por la Prueba tecnica|
 
 - General
+
+| Dependencias /Librerias | Funcionalidad                 |
+| --------------- | --------------------------------------------------------------------------- |
 | ✅ [eslint] | Utilizo para lintear mi codigo y no tenga errores de escritura  |
 | ✅ [prettier]| Utilizo para que de forma automatica me cambie los errores |
 | ✅ [nodemon]| Para reiniciar la app cada vez que un codigo cambie |
@@ -69,4 +72,7 @@
 [vitejs]: <https://vitejs.dev>
 [prettier]:<https://prettier.io>
 [dotenv]:<https://www.npmjs.com/package/dotenv>
+[cross-env]:<https://www.npmjs.com/package/cross-env>
 [mongoose]:<https://mongoosejs.com>
+[eslint]:<https://eslint.org>
+[nodemon]:<https://www.npmjs.com/package/nodemon>
