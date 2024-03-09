@@ -36,10 +36,17 @@
 | ✅ [cors]   | Se uso la libreria CORS como middleware para hacer la conexión entre mi backend y mi front|
 | ✅ [dotenv]| Para realizar carga de una variable de entorno de un archivo .env |
 | ✅ [cross-env]| Permite establecer variables de entorno de manera que funcionen en todos los sistemas operativos.| 
+| ✅ [mongoose]|Gestionador de datos de mongodb e interfaz amigable para hacer la relacion entre mi api y mi BD |
 
-# Estructura Variables de entorno BACKEND
+# Estructura Variables de entorno BACKEND (example)
 
-- **PORT=8080** (example)
+```code
+**PORT=8080** 
+**PERSISTENCE=MONGO**
+**MONGODB_URI=mongodb+srv://cuenta:contraseña7@cluster3.gjraob5.mongodb.net/** 
+**BASE_URL=http://localhost:8080**
+**COLLECTION_NAME=books**
+```
 
 - Frontend
 
@@ -62,3 +69,4 @@
 [vitejs]: <https://vitejs.dev>
 [prettier]:<https://prettier.io>
 [dotenv]:<https://www.npmjs.com/package/dotenv>
+[mongoose]:<https://mongoosejs.com>
