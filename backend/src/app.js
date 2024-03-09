@@ -1,7 +1,9 @@
 import express from 'express';
 import cors from 'cors';
+import configObject from '../config/configenvironment.js';
 
 const app = express();
+const env = configObject;
 
 app.use(
   cors({
@@ -9,13 +11,15 @@ app.use(
     methods: ['GET'],
   }),
 );
-app.listen(8080, () => {
+
+app.set('PORT', env.PORT || 8080);
+
+app.listen(app.get('PORT'), () => {
   console.log('Aplicacion corriendo en el puerto http://localhost:8080/');
 });
 
 app.get('/alive', (req, res) => {
   res.json({
-    status: 202,
     message: 'La api esta conectada y funciono el mensaje de alive',
   });
 });

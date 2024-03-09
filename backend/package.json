@@ -5,13 +5,22 @@
   "description": "backend para prueba tecnica middas",
   "main": "app.js",
   "scripts": {
-    "dev": "node  --watch ./src/app.js"
+    "start": "cross-env NODE_ENV=dev node ./src/app.js",
+    "start:dev": "cross-env NODE_ENV=dev nodemon ./src/app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.18.3"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "nodemon": "^3.1.0"
   }
 }

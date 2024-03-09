@@ -34,6 +34,12 @@
 | ✅ [node.js]    | Se  instalo a nivel local NodeJs.|
 | ✅ [express]   | Se uso la libreria Express de NodeJs.|
 | ✅ [cors]   | Se uso la libreria CORS como middleware para hacer la conexión entre mi backend y mi front|
+| ✅ [dotenv]| Para realizar carga de una variable de entorno de un archivo .env |
+| ✅ [cross-env]| Permite establecer variables de entorno de manera que funcionen en todos los sistemas operativos.| 
+
+# Estructura Variables de entorno BACKEND
+
+- **PORT=8080** (example)
 
 - Frontend
 
@@ -45,10 +51,14 @@
 - General
 | ✅ [eslint] | Utilizo para lintear mi codigo y no tenga errores de escritura  |
 | ✅ [prettier]| Utilizo para que de forma automatica me cambie los errores |
+| ✅ [nodemon]| Para reiniciar la app cada vez que un codigo cambie |
+
+
 
 [node.js]: <http://nodejs.org>
 [express]: <http://expressjs.com>
 [tailwindcss]: <https://tailwindcss.com>
 [cors]: <https://www.npmjs.com/package/cors>
 [vitejs]: <https://vitejs.dev>
-[prettier]:<https://>
+[prettier]:<https://prettier.io>
+[dotenv]:<https://www.npmjs.com/package/dotenv>
