@@ -71,4 +71,19 @@ router.put('/:id', async (req, res) => {
   }
 });
 
+router.delete('/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deletedBook = await BooksModel.findByIdAndDelete(id);
+
+    if (!deletedBook) {
+      return res.status(404).json({ error: 'Libro no encontrado' });
+    }
+
+    return res.status(200).json({ message: 'Libro eliminado correctamente', book: deletedBook });
+  } catch (error) {
+    return res.status(500).json({ error: 'Error al eliminar el libro', message: error.message });
+  }
+});
+
 export default router;
