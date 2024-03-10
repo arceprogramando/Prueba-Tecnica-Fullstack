@@ -2,26 +2,25 @@ import express from 'express';
 import cors from 'cors';
 import configObject from './config/configenvironment.js';
 import initializeDatabase from './repository/factory.js';
+import booksRouter from './routes/books.routes.js';
 
 const app = express();
 const env = configObject;
 
 app.use(
   cors({
-    origin: 'http://localhost:5173',
+    origin: ['http://localhost:5173', 'http://localhost:8080'],
     methods: ['GET'],
   }),
 );
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.set('PORT', env.PORT || 8080);
 
 app.listen(app.get('PORT'), () => {
-  console.log('Aplicacion corriendo en el puerto http://localhost:8080/');
+  console.log('Aplicacion corriendo en el puerto http://localhost:8080');
   initializeDatabase();
 });
 
-app.get('/alive', (req, res) => {
-  res.json({
-    message: 'La api esta conectada y funciono el mensaje de alive',
-  });
-});
+app.use('/api/books', booksRouter);
