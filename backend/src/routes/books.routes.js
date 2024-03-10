@@ -40,4 +40,35 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.put('/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { title, author, publicationDate, category } = req.body;
+    const updates = {};
+
+    if (title) {
+      updates.title = title;
+    }
+    if (author) {
+      updates.author = author;
+    }
+    if (publicationDate) {
+      updates.publicationDate = publicationDate;
+    }
+    if (category) {
+      updates.category = category;
+    }
+
+    const updatedBook = await BooksModel.findByIdAndUpdate(id, updates, { new: true });
+
+    if (!updatedBook) {
+      return res.status(404).json({ error: 'Libro no encontrado' });
+    }
+
+    return res.status(200).json({ message: 'Libro actualizado exitosamente', book: updatedBook });
+  } catch (error) {
+    return res.status(500).json({ error: 'Error al actualizar el libro', message: error.message });
+  }
+});
+
 export default router;
