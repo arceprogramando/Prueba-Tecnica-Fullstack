@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import BooksModel from '../model/books.models.js';
+import formatDate from '../utils/changeDate.js';
 
 const router = Router();
 
@@ -9,7 +10,14 @@ router.get('/', async (_, res) => {
     if (getBooks.length === 0) {
       return res.status(404).json({ message: 'No se encontraron libros' });
     }
-    return res.status(200).json(getBooks);
+
+    const formattedBooks = getBooks.map((book) => ({
+      ...book.toJSON(),
+      publicationDate: formatDate(book.publicationDate),
+    }));
+
+    console.log(formattedBooks);
+    return res.status(200).json(formattedBooks);
   } catch (error) {
     return res.status(500).json({ error: 'Error al traer los libros' });
   }
