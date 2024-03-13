@@ -1,8 +1,11 @@
+import { BookListData } from './components/BookLIstData';
+
 function App() {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">Inicializando Frontend</h1>
-    </>
+    <div className="container max-w-2xl mx-auto">
+      <h1 className="text-3xl font-bold underline text-center">Libreria</h1>
+      <BookListData />
+    </div>
   );
 }
 
