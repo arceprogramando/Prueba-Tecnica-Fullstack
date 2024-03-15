@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { BookList } from './BookList';
-import { Loading } from './Loading';
+import { Loading } from '../UI/Loading';
 import { getBookRequest } from '../../api/tasks.api';
 
 export const BookListData = () => {
@@ -11,8 +11,8 @@ export const BookListData = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await getBookRequest();
-        setBookData(data);
+        const getBooksData = await getBookRequest();
+        setBookData(getBooksData);
       } catch (error) {
         setError('Error al traer la data');
       } finally {
