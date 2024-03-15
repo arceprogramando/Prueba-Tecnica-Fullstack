@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { postBookRequest } from '../../api/tasks.api';
 import { Toaster, toast } from 'sonner';
 
-export const CreateBookForm = () => {
+export const CreateBookForm = ({ onAddBook }) => {
   const [formData, setFormData] = useState({
     title: '',
     author: '',
@@ -27,6 +27,8 @@ export const CreateBookForm = () => {
     try {
       const response = await postBookRequest(formData);
       if (response.success) {
+        const newBook = { ...formData };
+        onAddBook(newBook);
         setFormData({
           title: '',
           author: '',
