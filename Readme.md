@@ -54,6 +54,7 @@
 | --------------- | --------------------------------------------------------------------------- |
 | ✅ [vitejs] | Decidi utilizar vite ya que mi conocimiento en Nextjs es basico actualmente|
 | ✅ [tailwindcss]    | Se utiliza tailwind como elemento recomendado por la Prueba tecnica|
+| ✅ [sonner]    | Una libreria de elementos de alerta |
 
 - General
 
@@ -76,3 +77,4 @@
 [mongoose]:<https://mongoosejs.com>
 [eslint]:<https://eslint.org>
 [nodemon]:<https://www.npmjs.com/package/nodemon>
+[sonner]:<https://sonner.emilkowal.ski>
