@@ -9,7 +9,7 @@ const env = configObject;
 
 app.use(
   cors({
-    origin: ['http://localhost:5173', 'http://localhost:8080'],
+    origin: '*',
     methods: ['GET', 'DELETE', 'PUT', 'POST'],
   }),
 );
