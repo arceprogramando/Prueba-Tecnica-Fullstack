@@ -1,13 +1,11 @@
-import { BookListData } from './components/BookLIstData';
 import { Header } from './components/Header/Header';
+import { Main } from './components/Main/Main';
 
 function App() {
   return (
     <>
       <Header />
-      <div className="container max-w-2xl mx-auto">
-        <BookListData />
-      </div>
+      <Main />
     </>
   );
 }
