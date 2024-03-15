@@ -24,7 +24,26 @@ export const deleteBookRequest = async (id) => {
       return false;
     }
   } catch (error) {
-    console.error('Error deleting task:', error);
+    return false;
+  }
+};
+
+export const postBookRequest = async (formData) => {
+  try {
+    const response = await fetch('http://localhost:8080/api/books', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (!response.ok) {
+      throw new Error('Error al enviar los datos');
+    }
+
+    return true;
+  } catch (error) {
     return false;
   }
 };
