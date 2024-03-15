@@ -38,12 +38,12 @@ export const postBookRequest = async (formData) => {
       body: JSON.stringify(formData),
     });
 
-    if (!response.ok) {
-      throw new Error('Error al enviar los datos');
+    if (response.ok) {
+      return { success: true };
+    } else if (response.status === 409) {
+      return { error: '409' };
     }
-
-    return true;
   } catch (error) {
-    return false;
+    return { error: 'Error al enviar los datos' };
   }
 };
