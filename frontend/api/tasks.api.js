@@ -1,11 +1,13 @@
 export const getBookRequest = async () => {
   try {
     const response = await fetch('http://localhost:8080/api/books');
+    if (!response.ok) {
+      throw new Error('Error al obtener los datos');
+    }
     const data = await response.json();
     return data;
   } catch (error) {
-    const returnError = console.log(error);
-    return returnError;
+    throw new Error('Error al hacer fetching a la data');
   }
 };
 
