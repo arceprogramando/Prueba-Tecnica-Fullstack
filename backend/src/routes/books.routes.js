@@ -39,6 +39,11 @@ router.post('/', async (req, res) => {
       return res.status(400).json({ error: 'Falta la categoría del libro' });
     }
 
+    const existingBook = await BooksModel.findOne({ title });
+    if (existingBook) {
+      return res.status(400).json({ error: 'El título del libro ya existe' });
+    }
+
     const newBook = await BooksModel.create(req.body);
 
     return res.status(201).json({ message: 'Libro creado exitosamente', book: newBook });
